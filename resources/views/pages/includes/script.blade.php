@@ -40,3 +40,5 @@
 <script defer src="{{ asset('js/pages/fontawesome-all.js') }}"></script>
 
 <script src="{{ asset('js/pages/bootstrap.bundle.js') }}"></script>
+
+@yield('script')
