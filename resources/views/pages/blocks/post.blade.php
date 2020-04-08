@@ -44,6 +44,8 @@
 
     </article>
 
+    @include('pages.blocks.comment')
+
     <!-- ... end Comments -->
 
     <a href="#" class="more-comments"> @lang('View more comments') <span>+</span></a>
@@ -57,7 +59,7 @@
             <img src="{{ asset('socialyte/img/author-page.jpg') }}" alt="author">
 
             <div class="form-group with-icon-right ">
-                <textarea class="form-control" placeholder=""></textarea>
+                <textarea class="form-control comment-content" placeholder=""></textarea>
                 <div class="add-options-message">
                     <a href="#" class="options-message" data-toggle="modal" data-target="#update-header-photo">
                         <svg class="olymp-camera-icon">
@@ -68,7 +70,7 @@
             </div>
         </div>
 
-        <button class="btn btn-md-2 btn-primary"> @lang('Post Comment') </button>
+        <button class="btn btn-md-2 btn-primary store-comment" data-post_id={{ $post->id }}> @lang('Post Comment') </button>
 
         <button class="btn btn-md-2 btn-border-think c-grey btn-transparent custom-color"> @lang('Cancel') </button>
 
@@ -77,3 +79,7 @@
     <!-- ... end Comment Form  -->
 </div>
 @endforeach
+
+@section('script')
+    <script src="{{ asset('js/store_comment.js') }}"></script>
+@endsection

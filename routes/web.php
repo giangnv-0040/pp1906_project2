@@ -55,6 +55,7 @@ Route::middleware(['auth', 'verified', 'language'])->group(function () {
     Route::post('/settings/language/update', 'UserController@updateLanguage')->name('user.updateLanguage');
 
     Route::resource('posts', 'PostController');
+    Route::resource('comments', 'CommentController');
 });
 
 Route::get('/settings/password', function () {
